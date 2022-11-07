@@ -14,12 +14,11 @@ class RegisterController extends Controller
 
     public function store()
     {
-        $attributes = request()->validate([
+        $user = User::create(request()->validate([
             'name' => ['required', 'max:255'],
             'email' => ['required', 'email', 'max:255', Rule::unique('users', 'email')],
             'password' => ['required', 'max:255', 'min:7']
-        ]);
-        $user = User::create($attributes);
+        ]));
         auth()->login($user);
         return redirect('/');
     }

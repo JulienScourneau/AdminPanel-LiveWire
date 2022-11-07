@@ -2,7 +2,7 @@
 
             <main class="max-w-lg mx-auto p-4 rounded-xl border border-gray-500">
                 <h1 class="font-bold text-xl text-gray-800">New Post</h1>
-                <form action="/signup" method="POST" class="mt-10">
+                <form action="/create/post" method="POST" class="mt-10">
                     @csrf
 
                     <div class="mb-6">

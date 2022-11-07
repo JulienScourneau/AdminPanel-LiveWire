@@ -28,5 +28,8 @@ Route::post('login', [SessionController::class, 'store'])->middleware('guest');
 Route::get('logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout.perform');
 
 Route::get('dashboard', [AdminController::class, 'index'])->middleware('can:admin');
+
 Route::get('new-post', [PostController::class, 'create'])->middleware('can:admin');
+Route::post('create/post', [PostController::class, 'store'])->middleware('can:admin');
+
 Route::get('new-user', [UserController::class, 'create'])->middleware('can:admin');
