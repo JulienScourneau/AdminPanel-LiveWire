@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PostController::class, 'index'])->name('home');
+
+Route::get('signup', [RegisterController::class, 'create'])->middleware('guest');
+Route::post('signup', [RegisterController::class, 'store'])->middleware('guest');
+
+Route::get('login', [SessionController::class, 'create'])->middleware('guest');
+Route::post('login', [SessionController::class, 'store'])->middleware('guest');
+Route::get('logout', [SessionController::class, 'destroy'])->middleware('auth')->name('logout.perform');
+
+Route::get('dashboard', [AdminController::class, 'index'])->middleware('can:admin');
+Route::get('new-post', [PostController::class, 'create'])->middleware('can:admin');
+Route::get('new-user', [UserController::class, 'create'])->middleware('can:admin');
