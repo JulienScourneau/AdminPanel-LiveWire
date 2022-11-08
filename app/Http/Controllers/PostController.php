@@ -8,7 +8,13 @@ class PostController extends Controller
 {
     public function index()
     {
-        return view('components.welcome', [
+        if (request()->is('/')) {
+            return view('components.welcome', [
+                'posts' => Post::all()
+            ]);
+        }
+
+        return view('livewire.welcome', [
             'posts' => Post::all()
         ]);
     }
@@ -27,5 +33,10 @@ class PostController extends Controller
         ]));
 
         return redirect('/');
+    }
+    public function destroy(Post $post)
+    {
+        $post->delete();
+        return back();
     }
 }

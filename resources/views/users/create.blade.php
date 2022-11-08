@@ -28,7 +28,7 @@
             </div>
 
             <div class="mb-6">
-                <button type="submit" class="px-6 py-2 text-center rounded-xl border border-gray-800 hover:bg-gray-300">Publish</button>
+                <button type="submit" class="px-6 py-2 text-center rounded-xl border border-gray-800 hover:bg-gray-300">Create</button>
             </div>
         </form>
     </main>

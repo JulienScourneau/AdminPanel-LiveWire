@@ -10,7 +10,6 @@
 <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
 @livewireStyles
 
-
 <body style="font-family: Open Sans, sans-serif">
 <header class="px-6 py-4 bg-gray-800">
     <nav class="flex justify-between items-center">
@@ -25,30 +24,26 @@
             <a href="/livewire" class="flex">
                 <x-livewire/>
             </a>
-
-            <div>
-                <x-timer/>
-            </div>
+            <x-timer/>
         </div>
-
 
         <div class="my-4 flex items-center text-white">
 
             @auth
                 <h1 class="text-lg mr-6">Welcome back {{ucwords(auth()->user()->name)}}</h1>
                 @admin
-                <a href="/dashboard"
+                <a href="/livewire/dashboard"
                    class="text-sm border border-gray-200 rounded-full px-3 py-2 font-bold hover:bg-gray-700">Dashboard</a>
                 @endadmin
-                <form method="POST" action="/logout">
+                <form method="POST" action="/livewire/logout">
                     @csrf
                     <button class="text-xs font-bold uppercase ml-2" type="submit">Log out</button>
                 </form>
 
             @else
-                <a href="/signup" class="text-xs font-bold uppercase">Sign up</a>
-                <a href="/login"
-                   class="text-sm border border-gray-200 rounded-full px-4 py-2 font-bold hover:bg-gray-700 mx-5">Log
+                <a href="/livewire/signup" class="text-xs font-bold uppercase">Sign up</a>
+                <a href="/livewire/login"
+                   class="ml-6 font-bold uppercase border border-teal-600 px-4 py-1 rounded-full hover:bg-teal-600 hover:text-white transition hover:duration-300 hover:border-white ease-in-out">Log
                     in</a>
             @endauth
         </div>
@@ -58,7 +53,7 @@
 {{$slot}}
 <footer id="newsletter"
         class="bg-slate-600 text-center py-16 px-10 text-white">
-    <h5 class="text-3xl">Learn more about {{'Laravel/LiveWire'}}</h5>
+    <h5 class="text-3xl">Learn more about LiveWire</h5>
 
 </footer>
 @livewireScripts
