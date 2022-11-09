@@ -37,16 +37,6 @@ Route::post('create/post', [PostController::class, 'store'])->middleware('can:ad
 Route::delete('delete/post/{post:id}', [PostController::class, 'destroy'])->middleware('can:admin');
 
 Route::get('new-user', [UserController::class, 'create'])->middleware('can:admin');
+Route::post('create/user', [UserController::class, 'store'])->middleware('can:admin');
 Route::delete('delete/user/{user:id}', [UserController::class, 'destroy'])->middleware('can:admin');
-
-Route::get('livewire/dashboard', function () {
-    return view('components.dashboard-livewire');
-})->middleware('can:admin');
-
-Route::get('livewire/new-post', [PostController::class, 'create'])->middleware('can:admin');
-Route::post('livewire/create/post', [PostController::class, 'store'])->middleware('can:admin');
-Route::delete('livewire/delete/post/{post:id}', [PostController::class, 'destroy'])->middleware('can:admin');
-
-Route::get('livewire/new-user', [UserController::class, 'create'])->middleware('can:admin');
-Route::delete('livewire/delete/user/{user:id}', [UserController::class, 'destroy'])->middleware('can:admin');
 

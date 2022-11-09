@@ -10,11 +10,10 @@
 <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
 @livewireStyles
 
-
 <body style="font-family: Open Sans, sans-serif">
-<header class="px-6 py-4 bg-gray-800">
+<header class="px-8 py-6 bg-gray-800">
     <nav class="flex justify-between items-center">
-        <div class="flex">
+        <div class="flex items-center">
             <a href="/" class="flex mr-5">
 
                 <img src="/images/laravel.svg.png" width="50" height="52" alt="">
@@ -26,7 +25,7 @@
                 <x-livewire/>
             </a>
 
-            <div>
+            <div class="ml-10">
                 <x-timer/>
             </div>
         </div>
@@ -48,7 +47,7 @@
             @else
                 <a href="/signup" class="text-xs font-bold uppercase">Sign up</a>
                 <a href="/login"
-                   class="text-sm border border-gray-200 rounded-full px-4 py-2 font-bold hover:bg-gray-700 mx-5">Log
+                   class="text-sm border border-gray-200 rounded-full px-4 py-1.5 font-bold hover:bg-gray-700 mx-5">Sign
                     in</a>
             @endauth
         </div>
@@ -58,7 +57,11 @@
 {{$slot}}
 <footer id="newsletter"
         class="bg-slate-600 text-center py-16 px-10 text-white">
-    <h5 class="text-3xl">Learn more about {{'Laravel/LiveWire'}}</h5>
+    <h5 class="text-3xl">Learn more about
+        <a href="https://laravel.com/" class="hover:text-gray-900 underline underline-offset-4">Laravel</a>
+        /
+        <a href="https://laravel-livewire.com" class="hover:text-gray-900 underline underline-offset-4">LiveWire</a>
+    </h5>
 
 </footer>
 @livewireScripts

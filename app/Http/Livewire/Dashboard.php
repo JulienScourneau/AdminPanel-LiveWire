@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class Dashboard extends Component
 {
-    public $users ;
+    public $users;
     public $posts;
 
     public function mount()
@@ -16,8 +16,21 @@ class Dashboard extends Component
         $this->users = User::all();
         $this->posts = Post::all();
     }
+
     public function render()
     {
         return view('livewire.dashboard');
+    }
+
+    public function removeUser($id)
+    {
+        User::where('id', $id)->delete();
+        $this->users = User::all();
+    }
+
+    public function removePost($id)
+    {
+        Post::where('id', $id)->delete();
+        $this->posts = Post::all();
     }
 }
