@@ -1,5 +1,9 @@
 # Livewire
 
+![LARAVEL](https://img.shields.io/badge/-Laravel-red)
+![BLADE](https://img.shields.io/badge/-Blade-orange)
+![LIVEWIRE](https://img.shields.io/badge/-Livewire-blueviolet)
+
 Projet de démonstration de livewire, le back office est fait de composant livewire et blade pour démontrer la différence d'utilisation.
 
 ## Lancer le projet en local
