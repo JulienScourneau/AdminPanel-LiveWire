@@ -21,7 +21,7 @@
                 {{--            <x-livewire/>--}}
             </a>
 
-            <a href="/livewire" class="flex">
+            <a href="/" class="flex">
                 <x-livewire/>
             </a>
 

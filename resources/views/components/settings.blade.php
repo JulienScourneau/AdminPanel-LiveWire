@@ -1,6 +1,6 @@
 <x-layout>
     <section class="flex">
-        <aside class="bg-black-800 flex-shrink-0 h-screen pt-10 px-4 py-16 text-white w-48 bg-gradient-to-b from-slate-800 to-slate-600">
+        <aside class="bg-black-800 flex-shrink-0 h-screen pt-10 px-4 py-16 text-white w-40 bg-gradient-to-b from-slate-800 to-slate-600">
             <ul>
                 <li class="flex my-2">
                     <a href="/dashboard" class="flex-1 border rounded-full px-2 py-1 text-center {{request()->is('dashboard') ? 'text-gray-800 bg-white':'border-white'}}">Dashboard</a>

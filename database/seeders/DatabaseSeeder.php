@@ -3,7 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Category;
 use App\Models\Post;
+use App\Models\Project;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -24,5 +26,8 @@ class DatabaseSeeder extends Seeder
          ]);
 
          Post::factory(10)->create();
+
+//         Category::factory(5)->create();
+        \App\Models\Project::factory(5)->create();
     }
 }

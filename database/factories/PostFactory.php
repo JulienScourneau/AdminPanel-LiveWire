@@ -19,7 +19,7 @@ class PostFactory extends Factory
         return [
             'title' => fake()->sentence(3),
             'subtitle' => $this->faker->sentence,
-            'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(2)) . '</p>',
+            'body' => '<p>' . implode('</p><p>', $this->faker->paragraphs(1)) . '</p>',
         ];
     }
 }

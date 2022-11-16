@@ -1,6 +1,4 @@
 <x-settings>
-
-
     <main class="text-gray-800-800">
         <h1 class="text-xl py-4 uppercase ">Livewire Dashboard</h1>
         <div class="grid grid-cols-6">
@@ -12,10 +10,10 @@
                         <tbody class="divide-y divide-gray-200">
                         @foreach($posts as $post)
                             <tr>
-                                <td class="px-4 py-2 whitespace-nowrap">
+                                <td class="px-2 py-1 text-sm">
                                     {{$post->title}}
                                 </td>
-                                <td>
+                                <td class="text-xs ">
                                     {{$post->subtitle}}
                                 </td>
                                 <td>
